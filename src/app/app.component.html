@@ -1,14 +1,14 @@
 
-<full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins"
-[weekends]="false"
-[events]="[
-{title: 'event 1', date: '2020-05-05'},
-{title: 'event 2', date: '2020-05-06'}
-]"
-></full-calendar>
-
 <mat-form-field>
     <input matInput [matDatepicker]="picker" placeholder="Choose a date">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
+  <mat-calendar 
+  [selected]="selectedDate" 
+  [startAt]="startAt"
+  [minDate]="minDate" 
+  [maxDate]="maxDate" 
+  [dateFilter]="myDateFilter"
+  (selectedChange)="onSelect($event)">
+  </mat-calendar>
